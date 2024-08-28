@@ -1,4 +1,5 @@
 import { Layout, Button } from "antd";
+import { Link } from "react-router-dom";
 const { Header } = Layout;
 
 const NavbarComponent = () => {
@@ -18,9 +19,10 @@ const NavbarComponent = () => {
         </div>
       </div>
 
+      <Link to="/submit-request">
       <Button type="default" ghost>
         Submit a request
-      </Button>
+      </Button></Link>
     </Header>
   );
 };
