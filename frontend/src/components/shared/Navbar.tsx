@@ -12,17 +12,20 @@ const NavbarComponent = () => {
       }}
     >
       <div style={{ display: "flex", alignItems: "center" }}>
-        <div className="demo-logo" style={{ marginRight: 16 }}>
-          <span style={{ color: "white", fontSize: 14 }}>
-            Abstract | Help Center
-          </span>
-        </div>
+        <Link to="/">
+          <div className="demo-logo" style={{ marginRight: 16 }}>
+            <span style={{ color: "white", fontSize: 14 }}>
+              Abstract | Help Center
+            </span>
+          </div>
+        </Link>
       </div>
 
       <Link to="/submit-request">
-      <Button type="default" ghost>
-        Submit a request
-      </Button></Link>
+        <Button type="default" ghost>
+          Submit a request
+        </Button>
+      </Link>
     </Header>
   );
 };

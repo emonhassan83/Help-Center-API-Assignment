@@ -1,11 +1,17 @@
 import { useState } from "react";
-import { useGetAllCardsQuery } from "../../redux/features/cardApi";
 import { Card, Col, Row, Pagination } from "antd";
 
 type CardID = string | null;
 
-const CardSection = () => {
-  const { data } = useGetAllCardsQuery([]);
+type TCard  ={
+_id: string,
+title: string,
+description: string,
+createdAt: string,
+updatedAt: string
+}
+
+const CardSection = ({cards}: any) => {
   const [hoveredCard, setHoveredCard] = useState<CardID>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const cardsPerPage = 6;
@@ -24,7 +30,7 @@ const CardSection = () => {
 
   const startIndex = (currentPage - 1) * cardsPerPage;
   const endIndex = startIndex + cardsPerPage;
-  const currentCards = data?.data?.slice(startIndex, endIndex);
+  const currentCards = cards?.slice(startIndex, endIndex);
 
   return (
     <div>
@@ -47,7 +53,7 @@ const CardSection = () => {
       </style>
       <div className="card-section">
         <Row gutter={40}>
-          {currentCards?.map((card) => (
+          {currentCards?.map((card: TCard) => (
             <Col
               xs={24}
               sm={24}
@@ -76,7 +82,7 @@ const CardSection = () => {
                       {card.title}
                     </div>
                   }
-                  bodyStyle={{ padding: "30px" }}
+                  
                 >
                   <p>{card.description}</p>
                 </Card>
@@ -87,7 +93,7 @@ const CardSection = () => {
         <Pagination
           current={currentPage}
           pageSize={cardsPerPage}
-          total={data?.data?.length || 0}
+          total={cards?.length || 0}
           onChange={handlePageChange}
           style={{ marginTop: "20px", textAlign: "center" }}
         />

@@ -1,7 +1,9 @@
 import { Input, Button } from "antd";
 import { ArrowRightOutlined } from "@ant-design/icons";
 
-const Banner = () => {
+const Banner = ({setSearchTerm}: any) => { 
+  const onSearch = (value: string) => setSearchTerm(value);
+  
   return (
     <div
       style={{
@@ -25,7 +27,7 @@ const Banner = () => {
           enterButton={
             <Button icon={<ArrowRightOutlined />} />
           }
-          onSearch={(value) => console.log(value)}
+          onSearch={onSearch}
         />
       </div>
     </div>
