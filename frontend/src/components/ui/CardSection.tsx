@@ -52,7 +52,7 @@ const CardSection = ({cards}: any) => {
         `}
       </style>
       <div className="card-section">
-        <Row gutter={40}>
+        <Row gutter={80}>
           {currentCards?.map((card: TCard) => (
             <Col
               xs={24}
@@ -67,6 +67,8 @@ const CardSection = ({cards}: any) => {
                   cursor: "pointer",
                   boxShadow: hoveredCard === card._id ? "0 6px 12px rgba(0, 0, 0, 0.2)" : "none",
                   transform: hoveredCard === card._id ? "translateY(-5px)" : "none",
+                  borderRadius: "40px",
+                  border: "1px solid #ddd",
                 }}
                 onMouseEnter={() => handleMouseEnter(card._id)}
                 onMouseLeave={handleMouseLeave}
@@ -77,14 +79,17 @@ const CardSection = ({cards}: any) => {
                       style={{
                         borderBottom: "2px solid #ddd",
                         paddingBottom: "15px",
+                        fontWeight: "bold",
+                        fontSize: "18px"
                       }}
                     >
                       {card.title}
                     </div>
                   }
+                  style={{ padding: "20px", backgroundColor: "#F4F6F8" }}
                   
                 >
-                  <p>{card.description}</p>
+                  <p style={{marginTop: "-10px"}}>{card.description}</p>
                 </Card>
               </div>
             </Col>

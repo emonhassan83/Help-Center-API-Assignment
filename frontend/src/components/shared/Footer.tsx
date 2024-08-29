@@ -1,3 +1,4 @@
+import { AreaChartOutlined } from "@ant-design/icons";
 import { Layout, Row, Col } from "antd";
 
 const { Footer } = Layout;
@@ -52,7 +53,7 @@ const FooterComponent = () => {
 
         {/* Column 5 */}
         <Col xs={24} lg={8} style={{ textAlign: "right", marginTop: 20 }}>
-          <h2>Logo</h2>
+        <AreaChartOutlined style={{ fontSize: 40 }} />
           <p>
             © Copyright {new Date().getFullYear()} <br /> Abstract Studio Design, Inc. All rights
             reserved.

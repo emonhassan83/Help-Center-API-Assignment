@@ -16,8 +16,8 @@ const Banner = ({setSearchTerm}: any) => {
         padding: "20px",
       }}
     >
-      <h2 style={{fontSize: "32px", color: "#333" }}>
-        How Can we help?
+      <h2 style={{fontSize: "48px", fontWeight: "600", color: "#333", marginTop: "0px" }}>
+        How can we help?
       </h2>
 
       <div style={{ width: "100%", maxWidth: "500px" }}>
